@@ -1,0 +1,6 @@
+"migrate": "npx sequelize-cli db:migrate"
+"migrate": "npx sequelize-cli db:migrate:undo" = undo only last migrate or say a step - 1
+"migrate": "npx sequelize-cli db:migrate:undo:all" = undo all migrates
+"migrate": "npx sequelize-cli db:migrate:undo --name 01-create-user.js" = undo specified name migrate
+"migrate": "npx sequelize-cli db:migrate:status" = to check status of done/up and notdone/down migrates
+https://www.youtube.com/watch?v=ta3QsxiNkEY&list=PLolI8AY2AS9YO1kf0i_ui5_sKtxZg-yiR&index=3

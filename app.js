@@ -11,6 +11,7 @@ const myExpressRoutes = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
+const sequelize = require("./util/database");
 myExpressRoutes.use(express.json());
 //adding this line to get form submited value
 myExpressRoutes.use(bodyParser.json());
@@ -19,6 +20,7 @@ myExpressRoutes.use(bodyParser.urlencoded({ extended: false }));
 myExpressRoutes.use(express.static(path.join(__dirname, "public")));
 // Calling routes
 myExpressRoutes.use(cors({ origin: "http://localhost:3000" }));
+
 // myExpressRoutes.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", "*");
 //   res.setHeader(
@@ -61,6 +63,7 @@ myExpressRoutes.use(productRoute);
 myExpressRoutes.listen(8080, () => {
   console.log("server is up");
 });
+
 // http.createServer(myExpressRoutes).listen(3001);
 //the server object listens on port 8080
 //##### Use this in case of 2nd and 3rd type export (routes.js) #####
